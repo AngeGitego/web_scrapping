@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphone Pricing Trends</title>
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Include Chart.js for charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <style>
+    /* Add CSS styling here */
+  </style>
+</head>
+<body>
+  <div id="chartContainer">
+    <canvas id="priceChart" width="800" height="400"></canvas>
+  </div>
+
+  <script>
+    // Define sample data for visualization
+    const data = {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      datasets: [
+        {
+          label: 'Retailer 1',
+          data: [500, 520, 510, 530, 540],
+          borderColor: 'red',
+          backgroundColor: 'rgba(255, 0, 0, 0.2)'
+        },
+        {
+          label: 'Retailer 2',
+          data: [480, 490, 495, 505, 510],
+          borderColor: 'blue',
+          backgroundColor: 'rgba(0, 0, 255, 0.2)'
+        },
+        {
+          label: 'Retailer 3',
+          data: [510, 515, 525, 530, 535],
+          borderColor: 'green',
+          backgroundColor: 'rgba(0, 255, 0, 0.2)'
+        }
+      ]
+    };
+
+    // Create a line chart
+    var ctx = document.getElementById('priceChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
